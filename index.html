@@ -1,0 +1,160 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+/*Let and Const
+Arrow functions
+Default parameters
+for of loop
+Spread attributes
+Maps
+Sets
+Static methods
+Getters and Setters*/
+    //scopes
+    if (true) {
+        let a = 40 //l
+        console.log(a)
+        var x = 100
+    }
+
+    // console.log(a)
+    console.log(x)
+
+    //functions
+
+    function oldFunc() {
+        console.log("This is the old school way of doing functions")
+    }
+
+    newFunction = () => {
+        console.log("This is now the new way of doing functions")
+    }
+
+    oldFunc()
+    newFunction()
+
+    //default params
+    var funcAdd=(a, b=10)=>{
+        console.log(a+b)
+    }
+    funcAdd(10)
+    funcAdd(10,30)
+
+    //for loop
+    let scores =[88,55,77]
+    for (let score of scores){
+        console.log(score)
+    }
+
+    //spread attribute
+    var sumValues=(...arry)=>{
+        console.log(arry)  //... spread attribute conversts a list of elements to an array
+        let sum =0
+        for (let y of arry){
+            sum+=y
+        }
+        console.log("Total is "+sum)
+    }
+
+    sumValues(10,20,40,50)
+
+    Math.max(88,34,67,87)//using a spread attribute
+
+    let vals=[88,34,67,87]
+
+    //Math.max(vals)//error
+    Math.max(...vals)//works
+
+    //Maps ==allows key value pairs to be stored
+    let myDetails = new Map()
+    myDetails.set("name","Walter")
+    myDetails.set("age",100)
+    myDetails.set("height",5.7)
+    myDetails.set("weight","59")
+
+    console.log(myDetails.get("age"))
+
+    for (let [key,value] of myDetails){
+        console.log(key+"  "+value)
+    }
+
+    //Sets are used to store unique values for everything
+    let myItems = new Set()
+    myItems.add('John')
+    myItems.add('Mary')
+    myItems.add('Mike')
+    myItems.add('Mike')
+
+    for (let item of myItems){
+        console.log(item)
+    }
+
+     // You can also populate it from an array
+    let myItems2 =new Set([77,56,89,90,99,90]) //use it to remove duplicates
+
+    //Static methods
+
+
+    class MyClass{
+        static  callMe(){
+            console.log("Hello World of Statics")
+        }
+    }
+
+   MyClass.callMe()
+
+    //Getters and setters
+    class Person{
+        constructor (name)
+        {
+            this._name = name;
+        }
+
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+    }
+
+    let p1=new Person("John Mark")
+
+    console.log(p1.name)
+
+    p1.name="mike"
+
+    console.log(p1.name)
+
+    //Template literals
+    let name='John', age=44
+
+    let greeting = `Hello ${name}, Your age is ${age}`
+
+    console.log(greeting)
+
+    //destructuring
+    let [x1,x2]=[100,200]
+    console.log(x1,x2)
+
+    //using modules
+    import  {add}  from "mod1"
+    //import  {PI} from "mod12"
+
+    add(100,200)
+    //console.log(PI)
+
+
+
+    //Promises
+
+
+</script>
+
+</body>
+</html>
